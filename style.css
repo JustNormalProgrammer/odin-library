@@ -1,0 +1,79 @@
+body{
+    margin: 0;
+    display: grid;
+    justify-content: center;
+    background-color: #39393A;
+    text-align: center;
+}
+h1{
+    color: #85FFC7;
+    font-weight: 500;
+    font-size: 3rem;;
+}
+.container{
+    background-color: #E6E6E6;
+    padding: 60px;
+    width: 60vh;
+    position: relative;
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+.add-btn{
+    background-color: #85FFC7;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    margin: 20px;
+}
+.card-btn {
+    border: none; 
+    padding: 8px;
+    border-radius: 8px;
+}
+.del-btn {
+    background-color: red; 
+}
+.card{
+    background-color: #FF8552;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 300px;
+    gap: 10px;
+}
+.blur {
+    filter: blur(30px);
+}
+.marker{
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+.done{
+    background-color: lightgreen;
+}
+.todo{
+    background-color: lightgrey;
+}
+
+form {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 400px;
+    gap: 10px;
+    flex-direction: column;
+    visibility: hidden;
+}
+form input, .form-btn {
+    padding: 10px;
+}

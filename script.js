@@ -107,12 +107,35 @@ class ScreenControler{
     handleForm(e) {
         e.preventDefault();
         const data = Array.from(document.querySelectorAll('input'));
+        for(let input of data){
+            if(!input.validity.valid) {
+                this.showError(input);
+                input.reportValidity();
+                return;
+            }
+        }
         const values = data.map(data => data.value);
         const book = new Book(...values);
         this.library.addBookToLibrary(book);
         this.displayLibrary();
         this.form.reset();
         this.hideForm();
+    }
+    showError(input){
+        input.setCustomValidity('');
+        if(input.validity.valueMissing){
+            input.setCustomValidity("Please fill in this cell!");
+        } else if (input.validity.typeMismatch){
+            input.setCustomValidity("Entered value is in incorrect format!");
+        } else if(input.validity.tooShort){
+            input.setCustomValidity("Entered value is too short!");
+        } else if(input.validity.tooLong){
+            input.setCustomValidity("Entered value is too long!");
+        } else if(input.validity.rangeUnderflow){
+            input.setCustomValidity("Entered value is smaller than 10");
+        } else if(input.validity.rangeOverflow){
+            input.setCustomValidity("Entered value is bigger than 10000");
+        }
     }
     showForm() {
         if (window.getComputedStyle(this.form).getPropertyValue('visibility') === 'hidden') {

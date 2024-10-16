@@ -17,15 +17,15 @@
         </div>
         <form action="#">
             <label for="title">Title:</label>
-            <input type="text" name="title" id="title" minlength="2" maxlength="100">
+            <input type="text" name="title" id="title" minlength="2" maxlength="100" required>
             <label for="author">Author:</label>
-            <input type="text" name="author" id="author" minlength="2" maxlength="100">
+            <input type="text" name="author" id="author" minlength="2" maxlength="100" required>
             <label for="numberOfPages">Number of pages:</label>
-            <input type="number" name="numberOfPages" id="numberOfPages" min="10" max="10000">
+            <input type="number" name="numberOfPages" id="numberOfPages" min="10" max="10000" required>
             <fieldset>
                 <legend>Have you read this book already?</legend>
                 <label for="read">Yes</label>
-                <input type="radio" name="isRead" id="read" value="true">
+                <input type="radio" name="isRead" id="read" value="true" >
                 <label for="notread">No</label>
                 <input type="radio" name="isRead" id="notread" value="false">
             </fieldset>
